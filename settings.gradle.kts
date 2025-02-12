@@ -1,3 +1,8 @@
+@file:Suppress("UnstableApiUsage")
+
+include(":desktopApp")
+
+
 rootProject.name = "ShoppingAppMultiplatform"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
@@ -29,3 +34,5 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
+include(":androidApp")
+include(":desktopApp")
