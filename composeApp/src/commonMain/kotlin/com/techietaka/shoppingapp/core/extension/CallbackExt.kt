@@ -1,4 +1,4 @@
-package com.techietaka.shoppingapp.core.extensions
+package com.techietaka.shoppingapp.core.extension
 
 // Type-alias for a callback that takes no arguments and returns nothing (Unit)
 typealias EmptyCallback = () -> Unit
