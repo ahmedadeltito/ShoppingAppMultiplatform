@@ -3,7 +3,6 @@ package com.techietaka.shoppingapp.android
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.techietaka.shoppingapp.App
 import com.techietaka.shoppingapp.di.initKoin
 import com.techietaka.shoppingapp.productlist.presentation.ui.ProductListScreen
 import org.koin.android.ext.koin.androidContext

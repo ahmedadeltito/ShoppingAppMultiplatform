@@ -21,6 +21,7 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
@@ -32,7 +33,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.techietaka.shoppingapp.core.extension.SingleValueCallback
 import com.techietaka.shoppingapp.core.uicomponent.AsyncImage
 import com.techietaka.shoppingapp.core.uicomponent.EmptyComponent
@@ -41,6 +41,7 @@ import com.techietaka.shoppingapp.core.uicomponent.TitleBar
 import com.techietaka.shoppingapp.productlist.presentation.entity.ProductEntity
 import com.techietaka.shoppingapp.productlist.presentation.udf.ProductListState
 import com.techietaka.shoppingapp.ui.theme.Yellow400
+import com.techietaka.shoppingapp.ui.theme.dimens
 import org.jetbrains.compose.resources.painterResource
 import shoppingappmultiplatform.composeapp.generated.resources.Res
 import shoppingappmultiplatform.composeapp.generated.resources.ic_star
@@ -59,7 +60,7 @@ fun ProductListUiComponent(
                     EmptyComponent(message = errorMessage)
                 }
                 if (isLoading) {
-                    LoadingAnimation(circleSize = 16.dp)
+                    LoadingAnimation(circleSize = MaterialTheme.dimens.medium)
                 }
                 if (productList.isEmpty()) {
                     EmptyComponent(message = "No Product Found")
@@ -99,9 +100,9 @@ private fun ProductListGrid(
 
         LazyVerticalGrid(
             columns = GridCells.Fixed(columns),
-            horizontalArrangement = Arrangement.spacedBy(12.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
-            contentPadding = PaddingValues(20.dp),
+            horizontalArrangement = Arrangement.spacedBy(MaterialTheme.dimens.medium),
+            verticalArrangement = Arrangement.spacedBy(MaterialTheme.dimens.medium),
+            contentPadding = PaddingValues(MaterialTheme.dimens.medium),
             modifier = modifier,
         ) {
             items(productList, key = { it.id }) { product ->
@@ -123,9 +124,9 @@ private fun ProductItem(
 ) {
     Card(
         modifier = modifier
-            .padding(4.dp)
+            .padding(MaterialTheme.dimens.extraSmall)
             .clickable { navigateToProductDetails(product.id) },
-        shape = RoundedCornerShape(8.dp)
+        shape = RoundedCornerShape(MaterialTheme.dimens.small)
     ) {
         AsyncImage(
             url = product.image,
@@ -136,27 +137,30 @@ private fun ProductItem(
                 .aspectRatio(0.8f)
                 .fillMaxHeight()
         )
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(MaterialTheme.dimens.small))
         Column(
-            modifier = Modifier.padding(start = 16.dp, end = 16.dp),
+            modifier = Modifier.padding(
+                start = MaterialTheme.dimens.medium,
+                end = MaterialTheme.dimens.medium
+            ),
             horizontalAlignment = Alignment.Start,
         ) {
             Text(
                 text = product.title,
                 maxLines = 2,
                 overflow = TextOverflow.Ellipsis,
-                fontSize = 14.sp,
+                fontSize = MaterialTheme.dimens.sp14,
                 fontWeight = FontWeight.Bold
             )
-            Spacer(modifier = Modifier.height(4.dp))
+            Spacer(modifier = Modifier.height(MaterialTheme.dimens.extraSmall))
             Text(
                 text = product.category,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
-                fontSize = 12.sp,
+                fontSize = MaterialTheme.dimens.sp12,
                 fontWeight = FontWeight.ExtraLight
             )
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(MaterialTheme.dimens.small))
             Row(
                 modifier = Modifier,
                 horizontalArrangement = Arrangement.SpaceEvenly,
@@ -164,28 +168,29 @@ private fun ProductItem(
             ) {
                 Icon(
                     modifier = Modifier
-                        .size(18.dp)
+                        .size(MaterialTheme.dimens.medium)
                         .align(CenterVertically),
                     painter = painterResource(Res.drawable.ic_star),
                     contentDescription = null,
                     tint = Yellow400
                 )
                 Text(
-                    modifier = Modifier.align(CenterVertically).padding(start = 6.dp),
+                    modifier = Modifier.align(CenterVertically)
+                        .padding(start = MaterialTheme.dimens.small),
                     text = "${product.rating.rate} (${product.rating.count})",
-                    fontSize = 14.sp,
+                    fontSize = MaterialTheme.dimens.sp14,
                     fontWeight = FontWeight.Light
                 )
             }
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(MaterialTheme.dimens.small))
             Text(
                 text = "$${product.price}",
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
-                fontSize = 16.sp,
+                fontSize = MaterialTheme.dimens.sp16,
                 fontWeight = FontWeight.Bold
             )
-            Spacer(modifier = Modifier.height(12.dp))
+            Spacer(modifier = Modifier.height(MaterialTheme.dimens.medium))
         }
     }
 }

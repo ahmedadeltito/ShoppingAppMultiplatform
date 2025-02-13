@@ -10,8 +10,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
-import com.techietaka.shoppingapp.ui.theme.ShoppingAppTheme
-import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 fun EmptyComponent(
@@ -34,13 +32,5 @@ fun EmptyComponent(
                 text = message
             )
         }
-    }
-}
-
-@Preview
-@Composable
-private fun Preview() {
-    ShoppingAppTheme {
-        EmptyComponent(message = "Error String")
     }
 }

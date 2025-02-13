@@ -18,6 +18,8 @@ data class Dimens(
     val extraLarge: Dp = 64.dp,
     val spriteImageHeight: Dp = 120.dp,
     val searchBarHeight: Dp = 56.dp,
+    val sp12: TextUnit = 12.sp,
+    val sp14: TextUnit = 14.sp,
     val sp16: TextUnit = 16.sp
 )
 

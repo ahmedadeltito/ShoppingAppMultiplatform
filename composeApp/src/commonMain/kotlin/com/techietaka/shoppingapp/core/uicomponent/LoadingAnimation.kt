@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
@@ -22,17 +23,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
 import com.techietaka.shoppingapp.ui.theme.Yellow500
+import com.techietaka.shoppingapp.ui.theme.dimens
 import kotlinx.coroutines.delay
 
 @Composable
 fun LoadingAnimation(
     modifier: Modifier = Modifier,
-    circleSize: Dp = 25.dp,
+    circleSize: Dp = MaterialTheme.dimens.medium,
     circleColor: Color = Yellow500,
-    spaceBetween: Dp = 10.dp,
-    travelDistance: Dp = 20.dp
+    spaceBetween: Dp = MaterialTheme.dimens.small,
+    travelDistance: Dp = MaterialTheme.dimens.medium
 ) {
     val circles = listOf(
         remember { Animatable(initialValue = 0f) },
