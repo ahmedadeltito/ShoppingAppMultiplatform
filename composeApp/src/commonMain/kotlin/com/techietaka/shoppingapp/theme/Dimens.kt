@@ -1,4 +1,4 @@
-package com.techietaka.shoppingapp.ui.theme
+package com.techietaka.shoppingapp.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable

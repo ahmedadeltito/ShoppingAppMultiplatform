@@ -40,8 +40,8 @@ import com.techietaka.shoppingapp.core.uicomponent.LoadingAnimation
 import com.techietaka.shoppingapp.core.uicomponent.TitleBar
 import com.techietaka.shoppingapp.productlist.presentation.entity.ProductEntity
 import com.techietaka.shoppingapp.productlist.presentation.udf.ProductListState
-import com.techietaka.shoppingapp.ui.theme.Yellow400
-import com.techietaka.shoppingapp.ui.theme.dimens
+import com.techietaka.shoppingapp.theme.Yellow400
+import com.techietaka.shoppingapp.theme.dimens
 import org.jetbrains.compose.resources.painterResource
 import shoppingappmultiplatform.composeapp.generated.resources.Res
 import shoppingappmultiplatform.composeapp.generated.resources.ic_star

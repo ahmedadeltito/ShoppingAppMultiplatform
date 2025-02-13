@@ -23,8 +23,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
-import com.techietaka.shoppingapp.ui.theme.Yellow500
-import com.techietaka.shoppingapp.ui.theme.dimens
+import com.techietaka.shoppingapp.theme.Yellow500
+import com.techietaka.shoppingapp.theme.dimens
 import kotlinx.coroutines.delay
 
 @Composable
