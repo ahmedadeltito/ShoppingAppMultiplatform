@@ -23,6 +23,8 @@ kotlin {
             dependencies {
                 implementation(project(":composeApp"))
                 implementation(compose.desktop.currentOs)
+                // Ktor
+                implementation(libs.ktor.client.java)
                 runtimeOnly(libs.kotlinx.coroutines.swing)
             }
         }
