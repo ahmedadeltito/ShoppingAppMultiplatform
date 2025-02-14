@@ -1,7 +1,8 @@
-package com.techietaka.shoppingapp.productlist.data.di
+package com.techietaka.shoppingapp.di
 
+import com.techietaka.shoppingapp.core.httpfactory.createPlatformHttpClient
+import com.techietaka.shoppingapp.productdetails.data.remote.ProductDetailsApiService
 import com.techietaka.shoppingapp.productlist.data.remote.ProductListApiService
-import com.techietaka.shoppingapp.productlist.data.remote.createPlatformHttpClient
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.HttpTimeout
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -23,6 +24,7 @@ val remoteModule: (
         module {
             single { provideKtorClient(enableLogging = enableLogging, baseUrl = baseUrl) }
             single<ProductListApiService> { ProductListApiService(get()) }
+            single<ProductDetailsApiService> { ProductDetailsApiService(get()) }
         }
     }
 

@@ -18,7 +18,7 @@ import com.seiko.imageloader.rememberImageSuccessPainter
 import com.seiko.imageloader.ui.AutoSizeBox
 
 @Composable
-internal fun AsyncImage(
+fun AsyncImage(
     url: String,
     contentDescription: String?,
     contentScale: ContentScale = ContentScale.Fit,

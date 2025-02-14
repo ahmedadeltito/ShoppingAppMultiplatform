@@ -8,7 +8,7 @@ ksp = "2.1.0-1.0.29"
 #endregion
 
 #region ---- Android Core
-agp = "8.8.0"
+agp = "8.8.1"
 #endregion
 
 #region ---- Kotlin
@@ -16,7 +16,7 @@ agp = "8.8.0"
 kotlin = "2.1.0"
 kotlinx-serialization-json = "1.8.0"
 kotlinx-coroutines = "1.10.1"
-jetbrainsKotlinJvm = "2.1.0"
+jetbrains-kotlin-jvm = "2.1.0"
 #endregion
 
 #region ---- Jetpack Compose
@@ -24,8 +24,9 @@ activity-compose = "1.10.0"
 compose-multiplatform = "1.7.3"
 #endregion
 
-# Navigation
+#region ---- Material3
 material3 = "1.3.1"
+#endregion
 
 #region ---- Koin
 koin = "4.0.1"
@@ -36,18 +37,19 @@ ktor = "3.0.3"
 #endregion
 
 #region ---- Image Loader
-imageLoader = "1.9.0"
+image-loader = "1.9.0"
 #endregion
 
 #region ---- ViewModel Lifecycle and Navigation
 jetbrains-androidx-lifecycle-viewmodel = "2.8.4"
 jetbrains-androidx-navigation = "2.8.0-alpha11"
+foundationAndroid = "1.7.8"
 #endregion
 
 [libraries]
 
 androidx-material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
-image-loader = { module = "io.github.qdsfdhvh:image-loader", version.ref = "imageLoader" }
+image-loader = { module = "io.github.qdsfdhvh:image-loader", version.ref = "image-loader" }
 
 kotlinx-coroutines-swing = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
@@ -78,6 +80,7 @@ ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-conte
 ktor-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 ktor-client-darwin = { group = "io.ktor", name = "ktor-client-darwin", version.ref = "ktor" }
 ktor-client-java = { group = "io.ktor", name = "ktor-client-java", version.ref = "ktor" }
+androidx-foundation-android = { group = "androidx.compose.foundation", name = "foundation-android", version.ref = "foundationAndroid" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -86,6 +89,6 @@ composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-mu
 composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-jetbrainsKotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
+jetbrainsKotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrains-kotlin-jvm" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

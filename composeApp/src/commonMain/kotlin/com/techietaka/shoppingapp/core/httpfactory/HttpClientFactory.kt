@@ -1,4 +1,4 @@
-package com.techietaka.shoppingapp.productlist.data.remote
+package com.techietaka.shoppingapp.core.httpfactory
 
 import io.ktor.client.HttpClient
 

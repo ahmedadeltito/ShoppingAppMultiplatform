@@ -47,6 +47,7 @@ kotlin {
                 implementation(materialIconsExtended)
             }
 
+            // Navigation and ViewModel
             implementation(libs.jetbrains.androidx.navigation)
             implementation(libs.jetbrains.androidx.lifecycle.viewmodel)
 
@@ -94,5 +95,6 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.foundation.android)
     debugImplementation(compose.uiTooling)
 }

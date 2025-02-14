@@ -13,6 +13,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextOverflow
 import com.techietaka.shoppingapp.core.extension.EmptyCallback
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -36,6 +37,12 @@ fun TitleBar(
             }
         },
         actions = actions,
-        title = { Text(text = toolbarTitle) }
+        title = {
+            Text(
+                text = toolbarTitle,
+                overflow = TextOverflow.Ellipsis,
+                maxLines = 1
+            )
+        }
     )
 }

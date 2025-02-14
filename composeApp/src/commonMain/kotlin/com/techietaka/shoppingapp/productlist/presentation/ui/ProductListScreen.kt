@@ -24,7 +24,9 @@ fun ProductListScreen(
 
     LaunchedEffect(true) {
         with(viewModel) {
-            viewModel.onEvent(event = ProductListEvent.GetProductList)
+            if (state.productList.isEmpty()) {
+                viewModel.onEvent(event = ProductListEvent.GetProductList)
+            }
             sideEffectFlow.receiveAsFlow().collectLatest { sideEffect ->
                 when (sideEffect) {
                     is ProductListSideEffect.NavigateToProductDetails ->
@@ -40,7 +42,7 @@ fun ProductListScreen(
     ProductListUiComponent(
         snackbarHostState = snackbarHostState,
         productListState = state,
-        navigateToPokemonDetails = { productId ->
+        navigateToProductDetails = { productId ->
             viewModel.sendSideEffect(
                 sideEffect = ProductListSideEffect.NavigateToProductDetails(productId = productId)
             )

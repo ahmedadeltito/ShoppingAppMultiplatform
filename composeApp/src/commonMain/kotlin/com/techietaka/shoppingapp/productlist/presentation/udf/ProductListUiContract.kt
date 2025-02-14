@@ -1,6 +1,6 @@
 package com.techietaka.shoppingapp.productlist.presentation.udf
 
-import com.techietaka.shoppingapp.productlist.presentation.entity.ProductEntity
+import com.techietaka.shoppingapp.model.entity.ProductEntity
 
 sealed interface ProductListUiContract
 

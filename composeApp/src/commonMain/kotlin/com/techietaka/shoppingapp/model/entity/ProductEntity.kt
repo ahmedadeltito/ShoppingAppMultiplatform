@@ -1,4 +1,4 @@
-package com.techietaka.shoppingapp.productlist.presentation.entity
+package com.techietaka.shoppingapp.model.entity
 
 import androidx.compose.runtime.Immutable
 
@@ -7,6 +7,7 @@ data class ProductEntity(
     val id: Int,
     val title: String,
     val price: Double,
+    val description: String,
     val category: String,
     val image: String,
     val rating: RatingEntity,

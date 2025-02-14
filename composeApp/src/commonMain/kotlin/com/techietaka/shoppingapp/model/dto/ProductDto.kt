@@ -1,4 +1,4 @@
-package com.techietaka.shoppingapp.productlist.data.dto
+package com.techietaka.shoppingapp.model.dto
 
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.Serializable

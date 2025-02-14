@@ -1,4 +1,4 @@
-package com.techietaka.shoppingapp.productlist.presentation.di
+package com.techietaka.shoppingapp.di
 
 import com.techietaka.shoppingapp.core.dispatcher.shoppingAppDispatchers
 import kotlinx.coroutines.CoroutineDispatcher

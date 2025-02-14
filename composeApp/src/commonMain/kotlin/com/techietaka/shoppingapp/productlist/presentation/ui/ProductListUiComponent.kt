@@ -38,7 +38,7 @@ import com.techietaka.shoppingapp.core.uicomponent.AsyncImage
 import com.techietaka.shoppingapp.core.uicomponent.EmptyComponent
 import com.techietaka.shoppingapp.core.uicomponent.LoadingAnimation
 import com.techietaka.shoppingapp.core.uicomponent.TitleBar
-import com.techietaka.shoppingapp.productlist.presentation.entity.ProductEntity
+import com.techietaka.shoppingapp.model.entity.ProductEntity
 import com.techietaka.shoppingapp.productlist.presentation.udf.ProductListState
 import com.techietaka.shoppingapp.theme.Yellow400
 import com.techietaka.shoppingapp.theme.dimens
@@ -50,7 +50,7 @@ import shoppingappmultiplatform.composeapp.generated.resources.ic_star
 fun ProductListUiComponent(
     snackbarHostState: SnackbarHostState,
     productListState: ProductListState,
-    navigateToPokemonDetails: SingleValueCallback<Int>
+    navigateToProductDetails: SingleValueCallback<Int>
 ) {
     Box(modifier = Modifier.fillMaxSize()) {
         Column {
@@ -66,7 +66,7 @@ fun ProductListUiComponent(
                     EmptyComponent(message = "No Product Found")
                 } else {
                     ProductListGrid(
-                        onProductClicked = navigateToPokemonDetails,
+                        onProductClicked = navigateToProductDetails,
                         productList = productListState.productList,
                         modifier = Modifier.fillMaxSize()
                     )
