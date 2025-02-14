@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.update
 
 abstract class BaseViewModel<State, Event, SideEffect> : ViewModel() {
 
-    public var uiState: MutableStateFlow<State> =
+    var uiState: MutableStateFlow<State> =
         MutableStateFlow(initState())
         private set
 
@@ -18,7 +18,7 @@ abstract class BaseViewModel<State, Event, SideEffect> : ViewModel() {
 
     protected abstract fun onLoading(isLoading: Boolean)
 
-    public abstract fun onEvent(event: Event)
+    abstract fun onEvent(event: Event)
 
     abstract fun sendSideEffect(sideEffect: SideEffect)
 
