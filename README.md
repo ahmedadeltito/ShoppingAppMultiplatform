@@ -141,5 +141,5 @@ Drop a ⭐ if you find this project useful!
 ---
 
 ## 🙏 Credits
-The product list and product details screen design is inspired from [Joomia]([url](https://github.com/joelkanyi/Joomia/tree/main))!
+The product list and product details screen design is inspired from [Joomia](https://github.com/joelkanyi/Joomia/tree/main)!
 
