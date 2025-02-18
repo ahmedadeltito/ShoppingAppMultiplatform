@@ -12,6 +12,7 @@ Kotlin Multiplatform (KMP) allows **sharing business logic** across multiple pla
 Compose Multiplatform (CMP) extends **Jetpack Compose** beyond Android, enabling **declarative UI** across multiple platforms with a **single codebase**.
 
 With KMP & CMP, we achieve:
+
 ✅ **Code reusability** (shared logic & UI)  
 ✅ **Native performance** (no JS bridges)  
 ✅ **Maintainability** (single source of truth)  
@@ -36,6 +37,7 @@ The project is divided into the following modules:
 ### 📂 Root Modules:
 - **`androidApp`** → Android-specific entry point (uses Compose UI).
 - **`iosApp`** → iOS-specific entry point (integrates with SwiftUI).
+- **`desktopApp`** → Desktop-specific entry point (uses Compose UI).
 - **`composeApp`** → The shared **UI layer** built with Compose Multiplatform (CMP).
 
 ---
@@ -79,8 +81,8 @@ This is where the **`expect/actual` mechanism** comes in! 🚀
 ### 🔍 Examples in This Project
 | **Feature** | **expect (Shared in commonMain)** | **actual (Platform-Specific Implementation)** |
 |------------|--------------------------------|--------------------------------|
-| **Dispatchers** | `expect fun ioDispatcher(): CoroutineDispatcher` | `actual fun ioDispatcher()` → Uses `Dispatchers.IO` on Android, `NSOperationQueue` on iOS |
-| **Networking (HTTP Factory)** | `expect fun httpClient(): HttpClient` | `actual fun httpClient()` → Uses `OkHttp` for Android, `NSURLSession` for iOS |
+| **Dispatchers** | `expect val shoppingAppDispatchers: ShoppingAppDispatcher` | `actual fun shoppingAppDispatchers()` → Uses `Dispatchers.IO` on Android, `Dispatchers.Default` on iOS |
+| **Networking (HTTP Factory)** | `expect fun createPlatformHttpClient(): HttpClient` | `actual fun createPlatformHttpClient()` → Uses `OkHttp` for Android, `Darwin` for iOS |
 
 🔍 **This approach allows seamless platform-specific integrations while keeping most of the logic shared!**  
 
