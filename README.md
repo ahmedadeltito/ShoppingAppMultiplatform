@@ -136,5 +136,10 @@ This is where the **`expect/actual` mechanism** comes in! 🚀
 
 ## 🙌 Contributing & Feedback
 Feel free to **open an issue, suggest improvements, or contribute!**  
-Drop a ⭐ if you find this project useful!  
+Drop a ⭐ if you find this project useful!
+
+---
+
+## 🙏 Credits
+The product list and product details screen design is inspired from [Joomia](https://github.com/joelkanyi/Joomia/tree/main)!
 
