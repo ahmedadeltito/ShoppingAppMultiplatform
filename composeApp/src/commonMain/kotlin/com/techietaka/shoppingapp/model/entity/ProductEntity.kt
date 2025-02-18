@@ -1,8 +1,5 @@
 package com.techietaka.shoppingapp.model.entity
 
-import androidx.compose.runtime.Immutable
-
-@Immutable
 data class ProductEntity(
     val id: Int,
     val title: String,
@@ -13,7 +10,6 @@ data class ProductEntity(
     val rating: RatingEntity,
 )
 
-@Immutable
 data class RatingEntity(
     val rate: Double,
     val count: Int,

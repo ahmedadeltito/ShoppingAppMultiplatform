@@ -38,7 +38,7 @@ import com.techietaka.shoppingapp.core.uicomponent.AsyncImage
 import com.techietaka.shoppingapp.core.uicomponent.EmptyComponent
 import com.techietaka.shoppingapp.core.uicomponent.LoadingAnimation
 import com.techietaka.shoppingapp.core.uicomponent.TitleBar
-import com.techietaka.shoppingapp.model.entity.ProductEntity
+import com.techietaka.shoppingapp.model.ui.ProductUiModel
 import com.techietaka.shoppingapp.productlist.presentation.udf.ProductListState
 import com.techietaka.shoppingapp.theme.Yellow400
 import com.techietaka.shoppingapp.theme.dimens
@@ -86,7 +86,7 @@ fun ProductListUiComponent(
 @Composable
 private fun ProductListGrid(
     onProductClicked: SingleValueCallback<Int>,
-    productList: List<ProductEntity>,
+    productList: List<ProductUiModel>,
     modifier: Modifier = Modifier,
 ) {
     BoxWithConstraints {
@@ -118,7 +118,7 @@ private fun ProductListGrid(
 
 @Composable
 private fun ProductItem(
-    product: ProductEntity,
+    product: ProductUiModel,
     navigateToProductDetails: SingleValueCallback<Int>,
     modifier: Modifier = Modifier,
 ) {

@@ -40,7 +40,7 @@ import com.techietaka.shoppingapp.core.uicomponent.EmptyComponent
 import com.techietaka.shoppingapp.core.uicomponent.LoadingAnimation
 import com.techietaka.shoppingapp.core.uicomponent.RatingStar
 import com.techietaka.shoppingapp.core.uicomponent.TitleBar
-import com.techietaka.shoppingapp.model.entity.ProductEntity
+import com.techietaka.shoppingapp.model.ui.ProductUiModel
 import com.techietaka.shoppingapp.productdetails.presentation.udf.ProductDetailsUiState
 import com.techietaka.shoppingapp.theme.dimens
 
@@ -89,7 +89,7 @@ fun ProductDetailsUiComponent(
 @Composable
 private fun ColumnScope.ProductItem(
     modifier: Modifier = Modifier,
-    product: ProductEntity,
+    product: ProductUiModel,
     onAddToCartClicked: SingleValueCallback<Int>
 ) {
     Box(modifier = modifier.weight(2f).padding(top = 16.dp), contentAlignment = Alignment.Center) {

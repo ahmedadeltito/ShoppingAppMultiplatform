@@ -2,6 +2,7 @@ package com.techietaka.shoppingapp.productdetails.presentation.udf
 
 import androidx.lifecycle.viewModelScope
 import com.techietaka.shoppingapp.core.base.BaseViewModel
+import com.techietaka.shoppingapp.model.mapper.toUiModel
 import com.techietaka.shoppingapp.productdetails.data.remote.ProductDetailsApiService
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.catch
@@ -37,7 +38,14 @@ class ProductDetailsViewModel(
         viewModelScope.launch(context = coroutineDispatcher) {
             productDetailsApiService.getProduct(productId = productId)
                 .onStart { onLoading(isLoading = true) }
-                .onEach { product -> updateState { it.copy(isLoading = false, product = product) } }
+                .onEach { product ->
+                    updateState {
+                        it.copy(
+                            isLoading = false,
+                            product = product.toUiModel()
+                        )
+                    }
+                }
                 .catch { throwable ->
                     val errorMessage = throwable.message ?: "Something went wrong"
                     updateState { it.copy(isLoading = false, errorMessage = errorMessage) }
